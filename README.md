@@ -23,8 +23,8 @@ The notebook features several interactive visualizations:
 - Spherical harmonics as scalar fields on S²
 - Equivariant vs. non-equivariant map outputs
 
-![SO(3) Action on Vector Fields](https://path/to/so3_action_field.png)
-![Spherical Harmonic](https://path/to/spherical_harmonic.png)
+![SO(3) Action on Vector Fields](images/transformed_vfield.png)
+![Spherical Harmonic](images/spherical_harmonic.png)
 
 ## Mathematical Background
 
